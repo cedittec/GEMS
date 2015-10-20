@@ -1,0 +1,13 @@
+<plugin name='spring-websocket' version='1.0.0' grailsVersion='2.4 &gt; *'>
+  <author>zyro</author>
+  <title>Spring Websocket Plugin</title>
+  <description>Spring Websocket Plugin</description>
+  <documentation>https://github.com/zyro23/grails-spring-websocket</documentation>
+  <type>SpringWebsocketGrailsPlugin</type>
+  <resources>
+    <resource>DefaultSpringWebsocketConfig</resource>
+    <resource>SpringWebsocketResources</resource>
+    <resource>grails.plugin.springwebsocket.WebSocketConfig</resource>
+    <resource>grails.plugin.springwebsocket.ConfigUtils</resource>
+  </resources>
+</plugin>

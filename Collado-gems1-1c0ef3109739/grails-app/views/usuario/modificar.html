@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="tab-pane fade" id="cambio">
+            <div style=" width:100%; margin-right:0px; height:" class="tile gray" >
+                <form role="form" style="padding-left:10px ">
+                    <h4 class="page-header">Selección de usuario:</h4>
+                    <div class="form-group" style="padding:20px">
+
+                        <label><i class="fa fa-users fa-fw"></i> Usuario</label>                                                    
+
+                        <input type="text" class="form-control" name="emailUsuarioSearch" id="search" placeholder="Correo electronico" list="searchresults" autocomplete="off">
+                        <datalist id="searchresults">
+                            <g:each in="${usuarios.email}" var="email" >
+                                <option>${email}</option>                                                                       
+                            </g:each>
+
+                        </datalist>
+                        <button type="button" class="btn btn-green">Cargar Datos</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul id="userSettings" class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#basicInformationC" data-toggle="tab"><i class="fa fa-user fa-fw"></i> Información básica</a>
+                        </li>
+                        <li><a href="#changePasswordC" data-toggle="tab"><i class="fa fa-lock fa-fw"></i> Cambiar contraseña</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div id="userSettingsContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="basicInformationC">
+                            <form role="form">
+
+                                <h4 class="page-header">Información personal:</h4>
+                                <div class="form-group">                                                        
+                                    <label>Nombre</label>
+                                    <div class="form-inline">    
+                                        <div class="form-group" style="width:49%">
+                                            <input type="text" class="form-control" value="Leonardo" style="width:100%">
+                                        </div>
+                                        <div class="form-group" style="width:49%">
+                                            <input type="text" class="form-control" style="width:100%">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">                                                        
+                                    <label>Apellidos</label>
+                                    <div class="form-inline">    
+                                        <div class="form-group" style="width:49%">
+                                            <input type="text" class="form-control" value="Altamirano" style="width:100%">
+                                        </div>
+                                        <div class="form-group" style="width:49%">
+                                            <input type="text" class="form-control" value="Casillas" style="width:100%">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><i class="fa fa-building-o fa-fw"></i> Rol</label>
+                                    <select class="form-control">
+                                        <option>SysAdmin</option>
+                                        <option>Administrador técnico</option>
+                                        <option>Administrador de ventas</option>
+                                        <option>Cliente administrador</option>
+                                        <option>Cliente técnico</option>
+                                    </select>
+
+                                </div>
+
+                                <h4 class="page-header">Detalles de contacto:</h4>
+
+                                <div class="form-group">                                                        
+                                    <label>Número telefónico</label>
+                                    <div class="form-inline" style="padding-left:25px">   
+                                        <div class="form-group" style="width:33%">
+                                            <label>Tipo de teléfono</label>
+                                            <select class="form-control">
+                                                <option selected>Celular</option>
+                                                <option>Trabajo</option>
+                                                <option>Casa</option>
+                                            </select>
+
+                                        </div> 
+                                        <div class="form-group" style="width:33%">
+                                            <label>Lada</label>
+                                            <input type="number" class="form-control" value="777" >
+                                        </div>
+                                        <div class="form-group" style="width:33%">
+                                            <label>Teléfono</label>
+                                            <input type="tel" class="form-control" value="9999999" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fa fa-envelope-o fa-fw"></i> Correo electrónico</label>
+                                    <input type="email" class="form-control" value="laltamirano@enerxpert.com.mx">
+                                </div>
+
+                                <button type="submit" class="btn btn-default">Actualizar perfil</button>
+                                <button class="btn btn-green">Cancelar</button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade in" id="changePasswordC">
+                            <h3>Cambiar contraseña:</h3>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Contraseña actual</label>
+                                    <input type="password" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contraseña nueva</label>
+                                    <input type="password" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirmar nueva contraseña</label>
+                                    <input type="password" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn btn-default">Actualizar contraseña</button>
+                                <button class="btn btn-green">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

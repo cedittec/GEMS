@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="83f6c31f-eddb-42cc-9488-194af75d1b27">
+	<property name="ireport.zoom" value="0.9982500000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1264"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#9ACD32">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#EAFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7cd237c1-31a2-46a8-b57f-05c3a9e3a833"/>
+	<parameter name="direccionSitio" class="java.lang.String"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<parameter name="emailContacto" class="java.lang.String"/>
+	<parameter name="nombreSitio" class="java.lang.String"/>
+	<parameter name="intervaloTiempo" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Soporte\\Documents\\NetBeansProjects\\GEMS1\\web-app\\reports\\grafica1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_GRAFICA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://localhost:8080/GEMS1/PdfUtil/grafica2.xml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_AVISO_IMG" class="java.lang.String"/>
+	<parameter name="URL_LOGO_IMG" class="java.lang.String"/>
+	<parameter name="lecturaInicial" class="java.lang.String"/>
+	<parameter name="lecturaFinal" class="java.lang.String"/>
+	<parameter name="lecturaInicial2" class="java.lang.String"/>
+	<parameter name="lecturaFinal2" class="java.lang.String"/>
+	<parameter name="sistemaCogeneracion" class="java.lang.String"/>
+	<parameter name="sistemaTermico" class="java.lang.String"/>
+	<parameter name="cargoGas" class="java.lang.String"/>
+	<parameter name="cargoDiesel" class="java.lang.String"/>
+	<parameter name="calorGas" class="java.lang.String"/>
+	<parameter name="calorDiesel" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="769" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="301" width="379" height="61" forecolor="#669900" uuid="afb56739-f9bb-473b-ab0c-3cb1aaed6956"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Reporte de costos de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="362" width="379" height="61" forecolor="#669900" uuid="de525993-66ed-465a-a2b4-f93e94c20fb7"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[de combustibles]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="29" y="702" width="498" height="54" forecolor="#669900" backcolor="#669900" uuid="9ebd9b95-e5d4-469f-ad51-35d6612e19a3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="406" y="703" width="100" height="20" forecolor="#FFFFFF" uuid="4a576a01-147f-4d8e-bc7b-291db492a9fd"/>
+				<textFieldExpression><![CDATA[$P{emailContacto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="726" width="124" height="20" forecolor="#FFFFFF" uuid="32f4e5a4-12d9-45ee-b906-6456d5d2b6a6"/>
+				<text><![CDATA[www.scadagems.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="703" width="121" height="20" forecolor="#FFFFFF" uuid="c3273e19-e6ee-4537-9bde-6429dda891ab"/>
+				<textFieldExpression><![CDATA[$P{direccionSitio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="706" width="100" height="20" forecolor="#FFFFFF" uuid="0c822447-2351-4d5e-b0b9-cfce1c132d6f"/>
+				<textFieldExpression><![CDATA[$P{nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="67" y="43" width="133" height="79" uuid="af4368e1-1002-41a0-8bc7-64c7eab14623"/>
+				<imageExpression><![CDATA[$P{URL_LOGO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="76" y="441" width="148" height="20" uuid="b39d98bc-0b8f-4492-b0c5-851ff17464d2"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[[Estado financiero]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258">
+			<staticText>
+				<reportElement x="37" y="105" width="477" height="21" forecolor="#336600" uuid="2af6f499-000a-474d-a980-83a634b9a96a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Consumo de combustible por tipo de sistema .................................. 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="84" width="477" height="21" forecolor="#336600" uuid="f01e43b7-6d3e-45bd-99f0-1dd5d2b29d2a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Resumen del Reporte ............................................................................ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="126" width="477" height="21" forecolor="#336600" uuid="f4bf2bd3-fbcc-4b76-a6e4-a887a75676b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Costo de combustibles ........................................................................ 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="12" width="390" height="70" forecolor="#669900" uuid="ecc0f2d0-3462-4c47-b0c8-1f5a3867f911"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Tabla de contenidos]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="210" width="100" height="1" uuid="2689b62c-7153-4404-ab66-3c0a080933fe"/>
+			</break>
+		</band>
+		<band height="636">
+			<line>
+				<reportElement x="16" y="47" width="492" height="1" forecolor="#669900" uuid="bbdd28e1-174b-4102-b8de-89a67065e83b"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="25" width="184" height="22" forecolor="#669900" uuid="777a38c8-013a-4581-9c3b-d8b59919ab31"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Resumen del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="62" width="490" height="55" uuid="67193096-8bf8-46e7-bc35-691e572fbeea"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por medio del presente reporte se brindará un resumen global de los costos de combustibles generados por  el sitio "+ $P{nombreSitio} +" perteneciente al cliente "+ $P{nombreCliente} +". Este documento proveerá un desglose de los costos de combustibles generados por el funcionamiento del sitio por concepto de los combustibles consumidos por sus fuentes de energía alterna."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="19" y="137" width="494" height="70" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="d9d9c8a3-853b-4432-b4ee-71bede675410"/>
+			</rectangle>
+			<textField>
+				<reportElement x="75" y="146" width="430" height="61" uuid="002ff68e-a31e-4c56-87b9-e089bf9ec36f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El contenido presente en este documento se dirige exclusivamente a "+ $P{nombreUsuario} +" y puede contener información privilegiada o confidencial. Si no es usted el destinatario indicado, queda notificado de que la lectura, utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. \n \n"+
+"Si ha recibido este documento por error, le rogamos nos lo comunique a energia@emsmx.com y proceda a su destrucción."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="219" width="372" height="22" forecolor="#669900" uuid="050e0c74-4968-4442-8e39-c40b26b89a3d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Consumo de combustible por tipo de sistema]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="241" width="492" height="1" forecolor="#669900" uuid="bcf84056-357c-4364-ba10-b3cc61dc4bff"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="252" width="508" height="27" uuid="23a9d70c-cf81-4b8e-b51c-a0221735b66e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Combustible consumido por los sistemas de energía del sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " desglosada en los sistemas: "]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="635" width="100" height="1" uuid="45365878-4bd8-4aa8-a9e7-85374328addc"/>
+			</break>
+			<image>
+				<reportElement x="31" y="146" width="49" height="30" uuid="08773f73-9fea-4912-b0dd-66704e9c9a0c"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="38" y="293" width="139" height="20" uuid="571cbb4d-dd75-4b0b-ab63-20e49283be49"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[• Sistema de Cogeneración: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="313" width="232" height="20" uuid="d06e96bb-ed82-4b3b-baee-b68f090da101"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["o Lectura inicial: " + $P{lecturaInicial} + " m^3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="333" width="232" height="20" uuid="ecbc1c55-5173-4ccb-ba18-fcf90bd79743"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["o Lectura final: " + $P{lecturaFinal} + " m^3"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="353" width="139" height="20" uuid="87fc0d1c-f89a-40e7-983d-f039aa631877"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[• Sistema Térmico: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="373" width="247" height="20" uuid="193e0b5b-87e6-4261-aacd-4dc46862e14a"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["o Lectura inicial: " + $P{lecturaInicial2} + " m^3"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="393" width="247" height="20" uuid="e99acc98-7376-4b67-a06b-71246b7c6674"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["o Lectura final: " + $P{lecturaFinal2} + " m^3"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-15" y="393" width="488" height="151" isRemoveLineWhenBlank="true" uuid="037879ef-e399-49c9-ae14-91a3b517536c"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="527">
+			<staticText>
+				<reportElement x="26" y="13" width="184" height="22" forecolor="#669900" uuid="02b78508-489f-4e4f-8f68-37932ea29d65"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Costo de combustibles]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="34" width="492" height="1" forecolor="#669900" uuid="d7bb75ee-a9b4-4ae0-8499-78752395df2f"/>
+			</line>
+			<textField>
+				<reportElement x="26" y="48" width="508" height="27" uuid="74946b4d-92fd-4bc7-9ad9-eb3a6f218ff8"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costo de combustible generado por los sistemas de energía del sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " desglosada en los sistemas: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="86" width="300" height="20" uuid="7746a59f-d2d7-4a55-aad1-863ac08ac727"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Sistema de Cogeneración: " + $P{sistemaCogeneracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="106" width="300" height="20" uuid="1d469819-d6e6-4070-91f0-b5cf2ead4987"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Sistema Térmico: " + $P{sistemaTermico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="139" width="300" height="20" forecolor="#669900" uuid="98f60223-e77a-40ff-b415-4eccae750883"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Precio unitario de combustibles]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="159" width="100" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="7ceae9cd-0350-457e-be68-88e069872ece"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Sistema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="126" y="159" width="116" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="bf55bb9f-d447-4302-b787-467859671799"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Tipo de combustible]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="242" y="159" width="116" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="1c6655ce-fd95-44e8-af5d-df48edda09cf"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="358" y="159" width="163" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="403e5867-a73f-4672-8578-4c50f9336c1e"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Poder calorífico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="179" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="643d1667-b85a-4ba3-a9d9-6d126f5ea12f"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Cogeneración]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="126" y="179" width="116" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="72cf86fd-2946-4adf-9ceb-4734731db25c"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Gas LP]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="242" y="179" width="116" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9bcb36f5-7d55-44b2-9258-cecb962b4155"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{cargoGas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="358" y="179" width="163" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f493d0e0-67fd-495f-bac9-0dd3a035b0e3"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{calorGas} + " BTU/m^3"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="199" width="100" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="3a5a9cb9-5fe4-44cb-a52e-5dd3375ea308"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Térmico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="126" y="199" width="116" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="03528f16-bfc3-422e-afad-4db54e6f94c2"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Diésel]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="242" y="199" width="116" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="fc5cd657-2cf6-47de-9e11-02d7d7ada583"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{cargoDiesel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="358" y="199" width="163" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="b8255247-356d-4b0c-afac-ec789d09ed78"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{calorDiesel} + " BTU/m^3"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="93" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="62" splitType="Stretch"/>
+	</summary>
+</jasperReport>

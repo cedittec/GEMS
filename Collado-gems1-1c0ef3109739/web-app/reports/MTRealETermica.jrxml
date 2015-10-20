@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="83f6c31f-eddb-42cc-9488-194af75d1b27">
+	<property name="ireport.zoom" value="0.9982500000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1276"/>
+	<parameter name="direccionSitio" class="java.lang.String"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<parameter name="emailContacto" class="java.lang.String"/>
+	<parameter name="nombreSitio" class="java.lang.String"/>
+	<parameter name="intervaloTiempo" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Soporte\\Documents\\NetBeansProjects\\GEMS1\\web-app\\reports\\grafica1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_GRAFICA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://localhost:8080/GEMS1/PdfUtil/grafica2.xml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_AVISO_IMG" class="java.lang.String"/>
+	<parameter name="URL_LOGO_IMG" class="java.lang.String"/>
+	<parameter name="inercia" class="java.lang.String"/>
+	<parameter name="servicios" class="java.lang.String"/>
+	<parameter name="termico" class="java.lang.String"/>
+	<parameter name="condensados" class="java.lang.String"/>
+	<parameter name="vapor" class="java.lang.String"/>
+	<parameter name="inercia2" class="java.lang.String"/>
+	<parameter name="servicios2" class="java.lang.String"/>
+	<parameter name="condensados2" class="java.lang.String"/>
+	<parameter name="vapor2" class="java.lang.String"/>
+	<parameter name="URL_GRAFICA2" class="java.lang.String"/>
+	<parameter name="URL_GRAFICA3" class="java.lang.String"/>
+	<parameter name="temperaturaAireEntrada" class="java.lang.String"/>
+	<parameter name="temperaturaAireSalida" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="769" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="301" width="399" height="61" forecolor="#669900" uuid="afb56739-f9bb-473b-ab0c-3cb1aaed6956"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Reporte de ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="362" width="399" height="61" forecolor="#669900" uuid="de525993-66ed-465a-a2b4-f93e94c20fb7"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[energía térmica]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="29" y="702" width="498" height="54" forecolor="#669900" backcolor="#669900" uuid="9ebd9b95-e5d4-469f-ad51-35d6612e19a3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="406" y="703" width="100" height="20" forecolor="#FFFFFF" uuid="4a576a01-147f-4d8e-bc7b-291db492a9fd"/>
+				<textFieldExpression><![CDATA[$P{emailContacto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="726" width="124" height="20" forecolor="#FFFFFF" uuid="32f4e5a4-12d9-45ee-b906-6456d5d2b6a6"/>
+				<text><![CDATA[www.scadagems.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="703" width="121" height="20" forecolor="#FFFFFF" uuid="c3273e19-e6ee-4537-9bde-6429dda891ab"/>
+				<textFieldExpression><![CDATA[$P{direccionSitio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="706" width="100" height="20" forecolor="#FFFFFF" uuid="0c822447-2351-4d5e-b0b9-cfce1c132d6f"/>
+				<textFieldExpression><![CDATA[$P{nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="67" y="43" width="133" height="79" uuid="af4368e1-1002-41a0-8bc7-64c7eab14623"/>
+				<imageExpression><![CDATA[$P{URL_LOGO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="76" y="441" width="201" height="20" uuid="38320648-b679-41ec-80d5-65fa05750283"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[[Monitoreo en tiempo real]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258">
+			<staticText>
+				<reportElement x="38" y="105" width="477" height="21" forecolor="#336600" uuid="2af6f499-000a-474d-a980-83a634b9a96a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Temperaturas de los tanques ............................................................... 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="84" width="477" height="21" forecolor="#336600" uuid="f01e43b7-6d3e-45bd-99f0-1dd5d2b29d2a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Resumen del Reporte ............................................................................. 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="126" width="477" height="21" forecolor="#336600" uuid="f4bf2bd3-fbcc-4b76-a6e4-a887a75676b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Temperaturas de entrada y salida ....................................................... 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="147" width="477" height="21" forecolor="#336600" uuid="9fd9ad72-fdd0-47b6-9d00-0b602a38dbe1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV. Flujos del sistema ................................................................................. 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="12" width="390" height="70" forecolor="#669900" uuid="ecc0f2d0-3462-4c47-b0c8-1f5a3867f911"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Tabla de contenidos]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="210" width="100" height="1" uuid="2689b62c-7153-4404-ab66-3c0a080933fe"/>
+			</break>
+			<staticText>
+				<reportElement x="38" y="168" width="477" height="21" forecolor="#336600" uuid="4612a5f0-c05b-4a2a-ac52-0c504d59376b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[V. Presión de los tanques .......................................................................... 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="189" width="477" height="21" forecolor="#336600" uuid="0fe8043d-5688-424e-adaa-b2627783a459"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI. Niveles de los tanques .......................................................................... 4]]></text>
+			</staticText>
+		</band>
+		<band height="636">
+			<line>
+				<reportElement x="16" y="47" width="492" height="1" forecolor="#669900" uuid="bbdd28e1-174b-4102-b8de-89a67065e83b"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="25" width="184" height="22" forecolor="#669900" uuid="777a38c8-013a-4581-9c3b-d8b59919ab31"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Resumen del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="62" width="490" height="55" uuid="67193096-8bf8-46e7-bc35-691e572fbeea"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por medio del presente reporte se brindará un resumen global del estado del sitio con respecto a la energía térmica "+ $P{nombreSitio} +" perteneciente al cliente "+ $P{nombreCliente} +". Este documento proveerá un resumen de la energía térmica del sistema por conceptos de temperaturas de los tanques, entradas, salidas y flujos de los mismos."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="19" y="137" width="494" height="70" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="d9d9c8a3-853b-4432-b4ee-71bede675410"/>
+			</rectangle>
+			<textField>
+				<reportElement x="75" y="146" width="430" height="61" uuid="002ff68e-a31e-4c56-87b9-e089bf9ec36f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El contenido presente en este documento se dirige exclusivamente a "+ $P{nombreUsuario} +" y puede contener información privilegiada o confidencial. Si no es usted el destinatario indicado, queda notificado de que la lectura, utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. \n \n"+
+"Si ha recibido este documento por error, le rogamos nos lo comunique a energia@emsmx.com y proceda a su destrucción."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="219" width="235" height="22" forecolor="#669900" uuid="050e0c74-4968-4442-8e39-c40b26b89a3d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Temperaturas de los tanques]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="241" width="492" height="1" forecolor="#669900" uuid="bcf84056-357c-4364-ba10-b3cc61dc4bff"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="252" width="508" height="27" uuid="23a9d70c-cf81-4b8e-b51c-a0221735b66e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Temperaturas de los tanques del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="635" width="100" height="1" uuid="45365878-4bd8-4aa8-a9e7-85374328addc"/>
+			</break>
+			<image>
+				<reportElement x="31" y="146" width="49" height="30" uuid="08773f73-9fea-4912-b0dd-66704e9c9a0c"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="19" y="429" width="508" height="27" uuid="769538ca-0412-4b0a-8d80-11fa24cc1f16"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Temperaturas de entrada y salida del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="18" y="418" width="492" height="1" forecolor="#669900" uuid="fa723398-6ef6-4368-8bbb-d102d98ce6f6"/>
+			</line>
+			<staticText>
+				<reportElement x="19" y="396" width="277" height="22" forecolor="#669900" uuid="dfd7ad37-a99f-46f3-bd1b-c56fcbc53420"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Temperaturas de entrada y salida]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="286" width="290" height="20" uuid="fad24532-a1df-48bf-bd14-6ef59c74f70a"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de inercia: " + $P{inercia} + " °C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="306" width="290" height="20" uuid="da1e8921-cf7c-47ab-a091-183689017b13"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de servicios: " + $P{servicios} + " °C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="326" width="290" height="20" uuid="830039d6-db77-4e23-aae6-621e327940f3"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de del sistema térmico: " + $P{termico} + " °C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="346" width="290" height="20" uuid="7ae4e7e4-e1c2-4a70-88a9-2c9f74ee5d67"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de condensados: " + $P{condensados} + " °C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="366" width="290" height="20" uuid="2f30ed3c-cff2-4b24-92b0-e31e8237eb37"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de vapor: " + $P{vapor} + " °C"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="490" width="271" height="20" uuid="676ae94b-ce2c-4e0d-8ea2-1e53e11d4fc9"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Salida: " + $P{temperaturaAireSalida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="470" width="271" height="20" uuid="288f419d-f90c-4e1a-b043-199f0f624a90"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Entrada: " + $P{temperaturaAireEntrada}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="728">
+			<staticText>
+				<reportElement x="15" y="514" width="235" height="22" forecolor="#669900" uuid="02b78508-489f-4e4f-8f68-37932ea29d65"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Flujos del sistema]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="536" width="492" height="1" forecolor="#669900" uuid="d7bb75ee-a9b4-4ae0-8499-78752395df2f"/>
+			</line>
+			<textField>
+				<reportElement x="15" y="547" width="508" height="27" uuid="a7329a5b-649e-4bbe-b28f-842db8cc1ce2"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Flujos del sistema del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-38" y="61" width="488" height="151" isRemoveLineWhenBlank="true" uuid="8a324db3-4ee2-49ef-82ac-25bf7829aee3"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="16" y="19" width="489" height="22" forecolor="#669900" uuid="43efbe4a-f376-4c7e-b405-9b298ea60e7d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Temperatura de entrada al sistema de Cogeneración]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="40" width="492" height="1" forecolor="#669900" uuid="94b483fe-2615-43d1-9afc-547dcc597f4a"/>
+			</line>
+			<staticText>
+				<reportElement x="14" y="276" width="489" height="22" forecolor="#669900" uuid="bd1ae05b-37d0-4831-9e80-ffc1a00becd2"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Temperatura del agua]]></text>
+			</staticText>
+			<line>
+				<reportElement x="13" y="297" width="492" height="1" forecolor="#669900" uuid="2219286e-1708-41d4-bd49-3b9bb302c3a1"/>
+			</line>
+			<subreport>
+				<reportElement x="-24" y="298" width="488" height="151" isRemoveLineWhenBlank="true" uuid="2cebda9e-bdd4-43a6-874e-48499064d37e"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="-22" y="547" width="488" height="151" isRemoveLineWhenBlank="true" uuid="03893fd3-dbe0-4ace-85d7-c1ae13f4714b"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="636">
+			<staticText>
+				<reportElement x="19" y="108" width="235" height="22" forecolor="#669900" uuid="b1796ded-2954-4b73-9dbe-1509c297b085"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Presión de los tanques]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="129" width="492" height="1" forecolor="#669900" uuid="6839b023-d60f-48a3-988c-1affd8a1b69e"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="140" width="508" height="27" uuid="b440845c-dc43-4ce0-9d53-410564f8e897"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Presión de los tanques del Sistema de cogeneración del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="76" y="189" width="388" height="109" uuid="53ee196c-ebb9-4036-9259-c484128d70a4"/>
+			</rectangle>
+			<textField>
+				<reportElement x="19" y="409" width="508" height="27" uuid="929dbc5e-5c5f-45a0-92cf-9b8e911aea0b"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Niveles de los tanques del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="18" y="398" width="492" height="1" forecolor="#669900" uuid="2235ac05-7a7f-464c-ba0f-320f15443d69"/>
+			</line>
+			<staticText>
+				<reportElement x="19" y="377" width="235" height="22" forecolor="#669900" uuid="b58b5e24-3a45-4972-ab06-71107386974e"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Niveles de los tanques]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="501" width="290" height="20" uuid="d9ac0ec2-e5b9-4576-bd61-0cc708577e3b"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de vapor: " + $P{vapor2} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="441" width="290" height="20" uuid="39e4da88-52df-4c0f-916b-df111ddf7981"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de inercia: " + $P{inercia2} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="481" width="290" height="20" uuid="eee43d4f-d431-4566-9d58-c898cf232b7b"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de condensados: " + $P{condensados2} + "%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="461" width="290" height="20" uuid="4723a919-c34f-402e-9f10-2207f0f22a3b"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Tanque de servicios: " + $P{servicios2} + "%"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

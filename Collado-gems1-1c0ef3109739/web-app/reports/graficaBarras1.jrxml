@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grafica1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4434fa0f-7270-40eb-93b2-93a029ee38fe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="XML_DATA_DOCUMENT" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="xpath2">
+		<![CDATA[/meses/mes]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[nombre]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.String">
+		<fieldDescription><![CDATA[valor]]></fieldDescription>
+	</field>
+	<field name="valor2" class="java.lang.String">
+		<fieldDescription><![CDATA[valor2]]></fieldDescription>
+	</field>
+	<field name="nombreEjeX1" class="java.lang.String">
+		<fieldDescription><![CDATA[/meses/nombreEjeX1]]></fieldDescription>
+	</field>
+	<field name="nombreEjeX2" class="java.lang.String">
+		<fieldDescription><![CDATA[/meses/nombreEjeX2]]></fieldDescription>
+	</field>
+	<field name="nombreEjeX3" class="java.lang.String">
+		<fieldDescription><![CDATA[/meses/nombreEjeX3]]></fieldDescription>
+	</field>
+	<field name="valor3" class="java.lang.String">
+		<fieldDescription><![CDATA[valor3]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="185" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="12" y="0" width="536" height="185" uuid="3d991871-7cbd-4e8b-b36a-94a8a80dbef3"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEjeX1}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[Double.valueOf($F{valor})]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEjeX2}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[Double.valueOf($F{valor2})]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{nombreEjeX3}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[Double.valueOf($F{valor3})]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot labelRotation="-45.0"/>
+					<itemLabel/>
+					<categoryAxisFormat labelRotation="-45.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

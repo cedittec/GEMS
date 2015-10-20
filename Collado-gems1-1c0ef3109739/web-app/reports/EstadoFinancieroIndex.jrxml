@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="83f6c31f-eddb-42cc-9488-194af75d1b27">
+	<property name="ireport.zoom" value="0.9982500000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1419"/>
+	<parameter name="direccionSitio" class="java.lang.String"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<parameter name="emailContacto" class="java.lang.String"/>
+	<parameter name="nombreSitio" class="java.lang.String"/>
+	<parameter name="intervaloTiempo" class="java.lang.String"/>
+	<parameter name="costoGlobal" class="java.lang.String"/>
+	<parameter name="ahorroGlobal" class="java.lang.String"/>
+	<parameter name="efectivoAcumulado" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Soporte\\Documents\\NetBeansProjects\\GEMS1\\web-app\\reports\\grafica1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_GRAFICA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://localhost:8080/GEMS1/PdfUtil/grafica2.xml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_AVISO_IMG" class="java.lang.String"/>
+	<parameter name="URL_LOGO_IMG" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="769" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="301" width="379" height="61" forecolor="#669900" uuid="afb56739-f9bb-473b-ab0c-3cb1aaed6956"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Reporte de estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="364" width="379" height="61" forecolor="#669900" uuid="de525993-66ed-465a-a2b4-f93e94c20fb7"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[financiero]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="29" y="702" width="498" height="54" forecolor="#669900" backcolor="#669900" uuid="9ebd9b95-e5d4-469f-ad51-35d6612e19a3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="406" y="703" width="100" height="20" forecolor="#FFFFFF" uuid="4a576a01-147f-4d8e-bc7b-291db492a9fd"/>
+				<textFieldExpression><![CDATA[$P{emailContacto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="726" width="124" height="20" forecolor="#FFFFFF" uuid="32f4e5a4-12d9-45ee-b906-6456d5d2b6a6"/>
+				<text><![CDATA[www.scadagems.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="703" width="139" height="20" forecolor="#FFFFFF" uuid="c3273e19-e6ee-4537-9bde-6429dda891ab"/>
+				<textFieldExpression><![CDATA[$P{direccionSitio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="706" width="100" height="20" forecolor="#FFFFFF" uuid="0c822447-2351-4d5e-b0b9-cfce1c132d6f"/>
+				<textFieldExpression><![CDATA[$P{nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="67" y="43" width="133" height="79" uuid="af4368e1-1002-41a0-8bc7-64c7eab14623"/>
+				<imageExpression><![CDATA[$P{URL_LOGO_IMG}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258">
+			<staticText>
+				<reportElement x="37" y="84" width="477" height="21" forecolor="#336600" uuid="f01e43b7-6d3e-45bd-99f0-1dd5d2b29d2a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Resumen del Reporte ............................................................................ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="105" width="477" height="21" forecolor="#336600" uuid="2af6f499-000a-474d-a980-83a634b9a96a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Costos Globales ..................................................................................  2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="126" width="477" height="21" forecolor="#336600" uuid="f4bf2bd3-fbcc-4b76-a6e4-a887a75676b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Ahorros Globales ................................................................................. 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="150" width="477" height="21" forecolor="#336600" uuid="9fd9ad72-fdd0-47b6-9d00-0b602a38dbe1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV. Flujo Efectivo Acumulado .....................................................................3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="12" width="390" height="70" forecolor="#669900" uuid="ecc0f2d0-3462-4c47-b0c8-1f5a3867f911"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Tabla de contenidos]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="210" width="100" height="1" uuid="2689b62c-7153-4404-ab66-3c0a080933fe"/>
+			</break>
+		</band>
+		<band height="636">
+			<line>
+				<reportElement x="16" y="47" width="492" height="1" forecolor="#669900" uuid="bbdd28e1-174b-4102-b8de-89a67065e83b"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="25" width="184" height="22" forecolor="#669900" uuid="777a38c8-013a-4581-9c3b-d8b59919ab31"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Resumen del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="62" width="490" height="55" uuid="67193096-8bf8-46e7-bc35-691e572fbeea"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por medio del presente reporte se brindará un resumen global del Estado financiero del sitio "+ $P{nombreSitio} +" perteneciente al cliente "+ $P{nombreCliente} +". Este documento proveerá un resumen de los costos globales del funcionamiento del mismo, los ahorros generados por los sistemas de ahorro de energía implementados y el flujo de efectivo correspondiente."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="19" y="137" width="494" height="71" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="d9d9c8a3-853b-4432-b4ee-71bede675410"/>
+			</rectangle>
+			<textField>
+				<reportElement x="76" y="139" width="430" height="68" uuid="002ff68e-a31e-4c56-87b9-e089bf9ec36f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El contenido presente en este documento se dirige exclusivamente a "+ $P{nombreUsuario} +" y puede contener información privilegiada o confidencial. Si no es usted el destinatario indicado, queda notificado de que la lectura, utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. \n \n"+
+"Si ha recibido este documento por error, le rogamos nos lo comunique a energia@emsmx.com y proceda a su destrucción."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="219" width="184" height="22" forecolor="#669900" uuid="050e0c74-4968-4442-8e39-c40b26b89a3d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Costos globales]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="241" width="492" height="1" forecolor="#669900" uuid="bcf84056-357c-4364-ba10-b3cc61dc4bff"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="252" width="508" height="27" uuid="23a9d70c-cf81-4b8e-b51c-a0221735b66e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costos globales para el sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " : " + $P{costoGlobal}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="20" y="281" width="494" height="47" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="ab3f1b2e-6c26-4ea6-a7cc-54169a4824dd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="75" y="289" width="430" height="25" uuid="3ac949ae-7a46-4da7-a0f3-3de6045da1f0"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[El costo presentado fue resultado del cálculo de los consumos generados por las diversas fuentes de energía empleadas por el sitio.]]></text>
+			</staticText>
+			<pieChart>
+				<chart>
+					<reportElement x="37" y="361" width="369" height="250" uuid="a33e7088-dc2b-4347-b42f-edcb79cc6607"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<pieSeries>
+						<keyExpression><![CDATA[$P{costoGlobal}]]></keyExpression>
+						<valueExpression><![CDATA[Double.valueOf($P{costoGlobal})]]></valueExpression>
+						<labelExpression><![CDATA["Costo Global"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA[$P{ahorroGlobal}]]></keyExpression>
+						<valueExpression><![CDATA[Double.valueOf($P{ahorroGlobal})]]></valueExpression>
+						<labelExpression><![CDATA["Ahorros globales"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA[$P{efectivoAcumulado}]]></keyExpression>
+						<valueExpression><![CDATA[Double.valueOf($P{efectivoAcumulado})]]></valueExpression>
+						<labelExpression><![CDATA["Efectivo Acumulado"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<break>
+				<reportElement x="0" y="635" width="100" height="1" uuid="45365878-4bd8-4aa8-a9e7-85374328addc"/>
+			</break>
+			<image>
+				<reportElement x="31" y="146" width="49" height="30" uuid="08773f73-9fea-4912-b0dd-66704e9c9a0c"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="31" y="284" width="49" height="30" uuid="c907303c-808b-4e21-92fb-86063b70f27e"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+		</band>
+		<band height="527">
+			<staticText>
+				<reportElement x="26" y="13" width="184" height="22" forecolor="#669900" uuid="02b78508-489f-4e4f-8f68-37932ea29d65"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Ahorros globales]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="34" width="492" height="1" forecolor="#669900" uuid="d7bb75ee-a9b4-4ae0-8499-78752395df2f"/>
+			</line>
+			<textField>
+				<reportElement x="26" y="48" width="508" height="27" uuid="74946b4d-92fd-4bc7-9ad9-eb3a6f218ff8"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ahorros globales para el sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " : " + $P{ahorroGlobal}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="29" y="86" width="494" height="48" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="de0081f2-0657-4008-847a-d1e8c6f12b2a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="84" y="98" width="430" height="25" uuid="d8586836-60fa-4836-9bfa-6e3af15dc2ec"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[El ahorro presentado fue resultado del cálculo de los consumos generados por las diversas fuentes de energía empleadas por el sitio.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="407" width="184" height="22" forecolor="#669900" uuid="fc77079a-d705-475f-8233-19aa1a6b0f6d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Efectivo acumulado]]></text>
+			</staticText>
+			<line>
+				<reportElement x="26" y="429" width="492" height="1" forecolor="#669900" uuid="37b3a473-d889-4824-a8dd-604e9985a78e"/>
+			</line>
+			<textField>
+				<reportElement x="29" y="442" width="508" height="27" uuid="ac60eb32-6574-4dde-86a8-ac1a35ad624d"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ahorros globales para el sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " : " + $P{efectivoAcumulado}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-16" y="178" width="488" height="151" isRemoveLineWhenBlank="true" uuid="2b44b82e-7785-475b-be16-c807682f2bbe"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="38" y="93" width="49" height="30" uuid="e162d423-7263-44ff-a003-65dabb21339a"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="177" y="156" width="184" height="22" forecolor="#669900" uuid="58d62e1b-4573-4258-b646-255cd5b17f2f"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Desglose de ahorros]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="177" width="492" height="1" forecolor="#669900" uuid="97b38611-0db9-4c75-bcf7-7193dc061419"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

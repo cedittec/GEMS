@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="83f6c31f-eddb-42cc-9488-194af75d1b27">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1271"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#9ACD32">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#EAFFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#9999FF"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="7cd237c1-31a2-46a8-b57f-05c3a9e3a833"/>
+	<parameter name="direccionSitio" class="java.lang.String"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<parameter name="emailContacto" class="java.lang.String"/>
+	<parameter name="nombreSitio" class="java.lang.String"/>
+	<parameter name="intervaloTiempo" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Soporte\\Documents\\NetBeansProjects\\GEMS1\\web-app\\reports\\grafica1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_GRAFICA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://localhost:8080/GEMS1/PdfUtil/grafica2.xml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_AVISO_IMG" class="java.lang.String"/>
+	<parameter name="URL_LOGO_IMG" class="java.lang.String"/>
+	<parameter name="energiaBase" class="java.lang.String"/>
+	<parameter name="energiaIntermedia" class="java.lang.String"/>
+	<parameter name="energiaPunta" class="java.lang.String"/>
+	<parameter name="energiaBase2" class="java.lang.String"/>
+	<parameter name="energiaIntermedia2" class="java.lang.String"/>
+	<parameter name="energiaPunta2" class="java.lang.String"/>
+	<parameter name="tarifaCFE" class="java.lang.String"/>
+	<parameter name="precioBase" class="java.lang.String"/>
+	<parameter name="precioIntermedia" class="java.lang.String"/>
+	<parameter name="precioPunta" class="java.lang.String"/>
+	<parameter name="precioDemanda" class="java.lang.String"/>
+	<parameter name="costoCFE" class="java.lang.String"/>
+	<parameter name="costoCogeneracion" class="java.lang.String"/>
+	<parameter name="energiaBase3" class="java.lang.String"/>
+	<parameter name="energiaIntermedia3" class="java.lang.String"/>
+	<parameter name="energiaPunta3" class="java.lang.String"/>
+	<parameter name="costoFotovoltaico" class="java.lang.String"/>
+	<parameter name="energiaBase4" class="java.lang.String"/>
+	<parameter name="energiaIntermedia4" class="java.lang.String"/>
+	<parameter name="energiaPunta4" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="769" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="301" width="379" height="61" forecolor="#669900" uuid="afb56739-f9bb-473b-ab0c-3cb1aaed6956"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Reporte de costos de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="362" width="379" height="61" forecolor="#669900" uuid="de525993-66ed-465a-a2b4-f93e94c20fb7"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[de energía eléctrica]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="29" y="702" width="498" height="54" forecolor="#669900" backcolor="#669900" uuid="9ebd9b95-e5d4-469f-ad51-35d6612e19a3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="406" y="703" width="100" height="20" forecolor="#FFFFFF" uuid="4a576a01-147f-4d8e-bc7b-291db492a9fd"/>
+				<textFieldExpression><![CDATA[$P{emailContacto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="726" width="124" height="20" forecolor="#FFFFFF" uuid="32f4e5a4-12d9-45ee-b906-6456d5d2b6a6"/>
+				<text><![CDATA[www.scadagems.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="703" width="121" height="20" forecolor="#FFFFFF" uuid="c3273e19-e6ee-4537-9bde-6429dda891ab"/>
+				<textFieldExpression><![CDATA[$P{direccionSitio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="706" width="100" height="20" forecolor="#FFFFFF" uuid="0c822447-2351-4d5e-b0b9-cfce1c132d6f"/>
+				<textFieldExpression><![CDATA[$P{nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="67" y="43" width="133" height="79" uuid="af4368e1-1002-41a0-8bc7-64c7eab14623"/>
+				<imageExpression><![CDATA[$P{URL_LOGO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="76" y="441" width="148" height="20" uuid="b39d98bc-0b8f-4492-b0c5-851ff17464d2"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[[Estado financiero]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258">
+			<staticText>
+				<reportElement x="38" y="105" width="477" height="21" forecolor="#336600" uuid="2af6f499-000a-474d-a980-83a634b9a96a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Energía total consumida ...................................................................... 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="84" width="477" height="21" forecolor="#336600" uuid="f01e43b7-6d3e-45bd-99f0-1dd5d2b29d2a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Resumen del Reporte ............................................................................ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="126" width="477" height="21" forecolor="#336600" uuid="f4bf2bd3-fbcc-4b76-a6e4-a887a75676b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Costo de energía total CFE ................................................................. 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="12" width="390" height="70" forecolor="#669900" uuid="ecc0f2d0-3462-4c47-b0c8-1f5a3867f911"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Tabla de contenidos]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="210" width="100" height="1" uuid="2689b62c-7153-4404-ab66-3c0a080933fe"/>
+			</break>
+			<staticText>
+				<reportElement x="38" y="147" width="477" height="21" forecolor="#336600" uuid="97cc4cbc-8c1f-4608-8bf1-df8587aea720"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV. Costo evitado por el Sistema de cogeneración ................................ 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="168" width="477" height="21" forecolor="#336600" uuid="18f79487-0f7c-483d-ad54-f30316b6d0cd"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[V. Costo evitado por el Sistema fotovoltaico ......................................... 3]]></text>
+			</staticText>
+		</band>
+		<band height="636">
+			<line>
+				<reportElement x="16" y="47" width="492" height="1" forecolor="#669900" uuid="bbdd28e1-174b-4102-b8de-89a67065e83b"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="25" width="184" height="22" forecolor="#669900" uuid="777a38c8-013a-4581-9c3b-d8b59919ab31"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Resumen del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="62" width="490" height="64" uuid="67193096-8bf8-46e7-bc35-691e572fbeea"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por medio del presente reporte se brindará un resumen global de los costos de energía eléctrica generados por  el sitio "+ $P{nombreSitio} +" perteneciente al cliente "+ $P{nombreCliente} +". Este documento proveerá un desglose de los costos de energía eléctrica generados por el funcionamiento del mismo por concepto del tipo de energía consumida de acuerdo a la tarifa eléctrica del sitio."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="19" y="137" width="494" height="70" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="d9d9c8a3-853b-4432-b4ee-71bede675410"/>
+			</rectangle>
+			<textField>
+				<reportElement x="75" y="146" width="430" height="61" uuid="002ff68e-a31e-4c56-87b9-e089bf9ec36f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El contenido presente en este documento se dirige exclusivamente a "+ $P{nombreUsuario} +" y puede contener información privilegiada o confidencial. Si no es usted el destinatario indicado, queda notificado de que la lectura, utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. \n \n"+
+"Si ha recibido este documento por error, le rogamos nos lo comunique a energia@emsmx.com y proceda a su destrucción."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="219" width="209" height="22" forecolor="#669900" uuid="050e0c74-4968-4442-8e39-c40b26b89a3d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Energía total consumida]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="241" width="492" height="1" forecolor="#669900" uuid="bcf84056-357c-4364-ba10-b3cc61dc4bff"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="252" width="508" height="27" uuid="23a9d70c-cf81-4b8e-b51c-a0221735b66e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Energía total consumida por el sitio " + $P{nombreSitio} + " durante el periodo de " + $P{intervaloTiempo} + " desglosada en las energías: "]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="635" width="100" height="1" uuid="45365878-4bd8-4aa8-a9e7-85374328addc"/>
+			</break>
+			<image>
+				<reportElement x="31" y="146" width="49" height="30" uuid="08773f73-9fea-4912-b0dd-66704e9c9a0c"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="38" y="293" width="288" height="20" uuid="4706f913-f014-443c-a6bf-244d57951e49"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía base: " + $P{energiaBase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="313" width="288" height="20" uuid="d1a1e23b-8e81-452f-a92c-e3983e0373e9"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía intermedia: " + $P{energiaIntermedia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="333" width="288" height="20" uuid="5f0bc43c-4c5f-4eb5-b330-4ab3c69dc704"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía punta: " + $P{energiaPunta}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-19" y="366" width="488" height="151" isRemoveLineWhenBlank="true" uuid="a36fc205-056b-4940-b5a4-7e68bc1a1440"/>
+				<subreportParameter name="XML_DATA_DOCUMENT"/>
+				<subreportParameter name="XML_URL">
+					<subreportParameterExpression><![CDATA[$P{URL_GRAFICA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="636">
+			<staticText>
+				<reportElement x="26" y="13" width="234" height="22" forecolor="#669900" uuid="02b78508-489f-4e4f-8f68-37932ea29d65"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Costo de energía total CFE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="34" width="492" height="1" forecolor="#669900" uuid="d7bb75ee-a9b4-4ae0-8499-78752395df2f"/>
+			</line>
+			<textField>
+				<reportElement x="26" y="48" width="508" height="27" uuid="74946b4d-92fd-4bc7-9ad9-eb3a6f218ff8"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costo de la energía total (según las tarifas de CFE) consumida por el sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": " + $P{costoCFE} + " desglosada en las energías: "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="195" width="216" height="20" forecolor="#669900" uuid="98f60223-e77a-40ff-b415-4eccae750883"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Precios unitarios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="215" width="133" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="7ceae9cd-0350-457e-be68-88e069872ece"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Tipo de energía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="159" y="215" width="140" height="20" forecolor="#FFFFFF" backcolor="#669900" uuid="bf55bb9f-d447-4302-b787-467859671799"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Cargo por kW/h]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="235" width="133" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="643d1667-b85a-4ba3-a9d9-6d126f5ea12f"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Base]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="159" y="235" width="140" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="bbb2f5ed-79bc-498c-a47f-162dc6159cdb"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{precioBase}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="255" width="133" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="3a5a9cb9-5fe4-44cb-a52e-5dd3375ea308"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Intermedia]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="159" y="255" width="140" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="2f99745e-241d-43ca-833e-1ad1bb7b5746"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{precioIntermedia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="80" width="288" height="20" uuid="eda5b9da-b468-49c2-bae3-79e18e18c333"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía base: " + $P{energiaBase2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="100" width="288" height="20" uuid="e6d58b42-3d6d-405a-a91c-6789cfb4c81d"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía intermedia: " + $P{energiaIntermedia2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="120" width="288" height="20" uuid="b48905b5-e8ae-4c1c-b7cc-9744b37b5461"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía punta: " + $P{energiaPunta2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="145" width="95" height="20" uuid="8299e0f6-13a7-4c20-9e56-9ba95794a4d0"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tarifa de CFE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="26" y="165" width="95" height="20" uuid="580d1869-ceb7-4caa-9cf8-af41adb5d3cf"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tarifaCFE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="275" width="133" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="5acd959d-66d0-42a1-bf4b-e92cf826d5e9"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Punta]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="159" y="275" width="140" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="5050ec85-43bb-4e38-b1fc-bf0838b000e4"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{precioPunta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" mode="Opaque" x="26" y="295" width="133" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="fcadb105-5247-4a84-84b3-c7e8c3ae8c1c"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[  Demanda facturable]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="table" mode="Opaque" x="159" y="295" width="140" height="20" forecolor="#000000" backcolor="#CCCCFF" uuid="d929b51a-af70-4a5a-9a67-c06aeef994f3"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  " + $P{precioDemanda}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="327" width="377" height="22" forecolor="#669900" uuid="a71d6380-ec3b-4e49-821b-2ba543e254c9"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Costo evitado por el Sistema de cogeneración]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="348" width="492" height="1" forecolor="#669900" uuid="fc18ac9a-29f3-49c9-8a5f-17187afc5670"/>
+			</line>
+			<textField>
+				<reportElement x="26" y="361" width="508" height="43" uuid="a549ad5d-a42d-4a66-926c-52e4a7d530f3"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costo evitado por el Sistema de cogeneración en el consumo la energía total (según las tarifas de CFE) consumida por el sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": " + $P{costoCogeneracion} + " desglosada en las energías: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="430" width="288" height="20" uuid="f5448118-d62e-4169-bb81-8efca9648b24"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía intermedia: " + $P{energiaIntermedia3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="410" width="288" height="20" uuid="eed1dae0-ee7d-4ef9-972d-441d49439a93"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía base: " + $P{energiaBase3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="450" width="288" height="20" uuid="05866db8-5371-4983-986e-1d4fb1ee5dce"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía punta: " + $P{energiaPunta3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="29" y="500" width="492" height="1" forecolor="#669900" uuid="ffc6eca1-15a2-4166-91a4-1211ccb0850a"/>
+			</line>
+			<staticText>
+				<reportElement x="26" y="479" width="377" height="22" forecolor="#669900" uuid="f37f9626-6945-4541-a659-d90e35849ebc"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Costo evitado por el Sistema fotovoltaico]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="580" width="288" height="20" uuid="de8eec92-95d7-4028-8cc3-08783849c19a"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía intermedia: " + $P{energiaIntermedia4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="600" width="288" height="20" uuid="3904bc74-7bc4-4249-8340-c1b105e8ec4e"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía punta: " + $P{energiaPunta4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="560" width="288" height="20" uuid="601779ab-334b-422c-a782-37518432c605"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Energía base: " + $P{energiaBase4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="512" width="508" height="43" uuid="360b7ad7-7370-436a-9971-928e416df482"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costo evitado por el Sistema fotovoltaico en el consumo la energía total (según las tarifas de CFE) consumida por el sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": " + $P{costoFotovoltaico} + " desglosada en las energías: "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

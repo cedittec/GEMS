@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="83f6c31f-eddb-42cc-9488-194af75d1b27">
+	<property name="ireport.zoom" value="0.9982500000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1432"/>
+	<parameter name="direccionSitio" class="java.lang.String"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<parameter name="emailContacto" class="java.lang.String"/>
+	<parameter name="nombreSitio" class="java.lang.String"/>
+	<parameter name="intervaloTiempo" class="java.lang.String"/>
+	<parameter name="nombreCliente" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Soporte\\Documents\\NetBeansProjects\\GEMS1\\web-app\\reports\\grafica1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_GRAFICA" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["http://localhost:8080/GEMS1/PdfUtil/grafica2.xml"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="URL_AVISO_IMG" class="java.lang.String"/>
+	<parameter name="URL_LOGO_IMG" class="java.lang.String"/>
+	<parameter name="humedad" class="java.lang.String"/>
+	<parameter name="radiacion" class="java.lang.String"/>
+	<parameter name="temperatura" class="java.lang.String"/>
+	<parameter name="tempTanque" class="java.lang.String"/>
+	<parameter name="potencia" class="java.lang.String"/>
+	<parameter name="nivel" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="769" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="301" width="399" height="61" forecolor="#669900" uuid="afb56739-f9bb-473b-ab0c-3cb1aaed6956"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Reporte de monitoreo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="362" width="399" height="61" forecolor="#669900" uuid="de525993-66ed-465a-a2b4-f93e94c20fb7"/>
+				<textElement>
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[en tiempo real]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Opaque" x="29" y="702" width="498" height="54" forecolor="#669900" backcolor="#669900" uuid="9ebd9b95-e5d4-469f-ad51-35d6612e19a3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="406" y="703" width="100" height="20" forecolor="#FFFFFF" uuid="4a576a01-147f-4d8e-bc7b-291db492a9fd"/>
+				<textFieldExpression><![CDATA[$P{emailContacto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="403" y="726" width="124" height="20" forecolor="#FFFFFF" uuid="32f4e5a4-12d9-45ee-b906-6456d5d2b6a6"/>
+				<text><![CDATA[www.scadagems.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="703" width="121" height="20" forecolor="#FFFFFF" uuid="c3273e19-e6ee-4537-9bde-6429dda891ab"/>
+				<textFieldExpression><![CDATA[$P{direccionSitio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="706" width="100" height="20" forecolor="#FFFFFF" uuid="0c822447-2351-4d5e-b0b9-cfce1c132d6f"/>
+				<textFieldExpression><![CDATA[$P{nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="67" y="43" width="133" height="79" uuid="af4368e1-1002-41a0-8bc7-64c7eab14623"/>
+				<imageExpression><![CDATA[$P{URL_LOGO_IMG}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="76" y="441" width="130" height="20" uuid="38320648-b679-41ec-80d5-65fa05750283"/>
+				<textElement markup="none">
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[[Reporte global]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="13" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="258">
+			<staticText>
+				<reportElement x="38" y="105" width="477" height="21" forecolor="#336600" uuid="2af6f499-000a-474d-a980-83a634b9a96a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Variables de ambiente .......................................................................... 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="84" width="477" height="21" forecolor="#336600" uuid="f01e43b7-6d3e-45bd-99f0-1dd5d2b29d2a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Resumen del Reporte ............................................................................ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="126" width="477" height="21" forecolor="#336600" uuid="f4bf2bd3-fbcc-4b76-a6e4-a887a75676b2"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[III. Energía térmica .................................................................................... 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="147" width="477" height="21" forecolor="#336600" uuid="9fd9ad72-fdd0-47b6-9d00-0b602a38dbe1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IV. Energía eléctrica .................................................................................. 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="12" width="390" height="70" forecolor="#669900" uuid="ecc0f2d0-3462-4c47-b0c8-1f5a3867f911"/>
+				<textElement>
+					<font fontName="Arial" size="36"/>
+				</textElement>
+				<text><![CDATA[Tabla de contenidos]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="210" width="100" height="1" uuid="2689b62c-7153-4404-ab66-3c0a080933fe"/>
+			</break>
+			<staticText>
+				<reportElement x="38" y="168" width="477" height="21" forecolor="#336600" uuid="bdad3a34-e10d-4820-ba17-36dd7fa0a734"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[V. Niveles de combustible ........................................................................ 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="189" width="477" height="21" forecolor="#336600" uuid="8e6e219d-4607-4953-b5c1-6f0edc0cb7ec"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VI. Diagrama de principios ....................................................................... 3]]></text>
+			</staticText>
+		</band>
+		<band height="636">
+			<line>
+				<reportElement x="16" y="47" width="492" height="1" forecolor="#669900" uuid="bbdd28e1-174b-4102-b8de-89a67065e83b"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="25" width="184" height="22" forecolor="#669900" uuid="777a38c8-013a-4581-9c3b-d8b59919ab31"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Resumen del reporte]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="16" y="62" width="490" height="55" uuid="67193096-8bf8-46e7-bc35-691e572fbeea"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por medio del presente reporte se brindará un resumen global del estado actual del sitio "+ $P{nombreSitio} +" perteneciente al cliente "+ $P{nombreCliente} +". Este documento proveerá un resumen de la energía térmica y eléctrica del sitio así como los niveles de combustibles y variables de ambiente del mismo."]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="19" y="137" width="494" height="70" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="d9d9c8a3-853b-4432-b4ee-71bede675410"/>
+			</rectangle>
+			<textField>
+				<reportElement x="75" y="146" width="430" height="61" uuid="002ff68e-a31e-4c56-87b9-e089bf9ec36f"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["El contenido presente en este documento se dirige exclusivamente a "+ $P{nombreUsuario} +" y puede contener información privilegiada o confidencial. Si no es usted el destinatario indicado, queda notificado de que la lectura, utilización, divulgación y/o copia sin autorización está prohibida en virtud de la legislación vigente. \n \n"+
+"Si ha recibido este documento por error, le rogamos nos lo comunique a energia@emsmx.com y proceda a su destrucción."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="219" width="184" height="22" forecolor="#669900" uuid="050e0c74-4968-4442-8e39-c40b26b89a3d"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Variables de ambiente]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="241" width="492" height="1" forecolor="#669900" uuid="bcf84056-357c-4364-ba10-b3cc61dc4bff"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="252" width="508" height="27" uuid="23a9d70c-cf81-4b8e-b51c-a0221735b66e"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Variables de ambiente del sitio " + $P{nombreSitio} + " a la fecha " + $P{intervaloTiempo} + ": "]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="20" y="419" width="494" height="47" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="ab3f1b2e-6c26-4ea6-a7cc-54169a4824dd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="75" y="427" width="430" height="25" uuid="3ac949ae-7a46-4da7-a0f3-3de6045da1f0"/>
+				<textElement>
+					<font fontName="Arial" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[El dato presentado es un dato representativo elegido entre los diversos componentes térmicos del sistema, datos concernientes a estos se podrán consultar en el reporte de Monitoreo en tiempo real: Energía térmica]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="635" width="100" height="1" uuid="45365878-4bd8-4aa8-a9e7-85374328addc"/>
+			</break>
+			<image>
+				<reportElement x="31" y="146" width="49" height="30" uuid="08773f73-9fea-4912-b0dd-66704e9c9a0c"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="27" y="427" width="49" height="30" uuid="c907303c-808b-4e21-92fb-86063b70f27e"/>
+				<imageExpression><![CDATA[$P{URL_AVISO_IMG}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="38" y="279" width="271" height="20" uuid="1a94e733-64a1-4662-9867-7fd9aad0b54c"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Radiación solar: " + $P{radiacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="299" width="271" height="20" uuid="081bfe9b-397c-4269-86b3-f0a48bd283d0"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Niveles de humedad: " + $P{humedad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="319" width="271" height="20" uuid="7607b6f2-8e4d-4b89-8cf0-0a39ded2fee3"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["• Temperatura: " + $P{temperatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="385" width="508" height="27" uuid="769538ca-0412-4b0a-8d80-11fa24cc1f16"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Temperatura del tanque de inercia del sitio " + $P{nombreSitio} + " a la fecha " + $P{intervaloTiempo} + ": " + $P{tempTanque} + " °C"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="18" y="374" width="492" height="1" forecolor="#669900" uuid="fa723398-6ef6-4368-8bbb-d102d98ce6f6"/>
+			</line>
+			<staticText>
+				<reportElement x="19" y="352" width="184" height="22" forecolor="#669900" uuid="dfd7ad37-a99f-46f3-bd1b-c56fcbc53420"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Energía térmica]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="19" y="514" width="508" height="27" uuid="433a5176-c30e-4f46-8eba-153797edd613"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Potencia generada por el sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": " + $P{potencia}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="18" y="503" width="492" height="1" forecolor="#669900" uuid="f1116353-8c9c-46ba-8bc0-abc3b75f8245"/>
+			</line>
+			<staticText>
+				<reportElement x="19" y="481" width="184" height="22" forecolor="#669900" uuid="231c800b-42be-4c36-af38-ee78ad2d7324"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Energía eléctrica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="554" width="209" height="22" forecolor="#669900" uuid="dade6e7c-712b-4257-9f42-e192585f66c9"/>
+				<textElement>
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<text><![CDATA[Niveles de combustible]]></text>
+			</staticText>
+			<line>
+				<reportElement x="18" y="576" width="492" height="1" forecolor="#669900" uuid="70958bff-7581-43f1-9532-a67e59c59326"/>
+			</line>
+			<textField>
+				<reportElement x="19" y="587" width="508" height="27" uuid="3e0316aa-9927-4446-a144-22784c6866e8"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Niveles de combustible del sitio " + $P{nombreSitio} + " durante el periodo " + $P{intervaloTiempo} + ": " + $P{nivel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
