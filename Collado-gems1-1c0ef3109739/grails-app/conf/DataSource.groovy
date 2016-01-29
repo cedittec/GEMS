@@ -4,9 +4,10 @@ dataSource {
     pooled = true
     dbCreate = "update"
     //url = "jdbc:mysql://162.243.228.180/gemsbd?autoReconnect=true"    
-    url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
+    //url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
     //url = "jdbc:mysql://132.254.39.213/gemsbd?autoReconnect=true"
     //url = "jdbc:mysql://localhost/gemsbd?autoReconnect=true"
+    url = "jdbc:mysql://10.49.130.37/gemsbd?autoReconnect=true"
     driverClassName = "com.mysql.jdbc.Driver"
     //username = "cedittec"
     //password = "server"
@@ -27,9 +28,11 @@ environments {
         dataSource {
             dbCreate = "update"
             //url = "jdbc:mysql://162.243.228.180/gemsbd?autoReconnect=true"    
-    url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
+            //url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
            // url = "jdbc:mysql://132.254.39.213/gemsbd?autoReconnect=true"
             //url = "jdbc:mysql://localhost/gemsbd?autoReconnect=true"
+            
+            url = "jdbc:mysql://10.49.130.37/gemsbd?autoReconnect=true"
             username = "userScada"
             password = "ScadaGems1"
         }
@@ -39,9 +42,10 @@ environments {
           dataSource {  
             dbCreate = "update"
             //url = "jdbc:mysql://162.243.228.180/gemsbd?autoReconnect=true"
-    url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
+            //url = "jdbc:mysql://mysql2001.shared-servers.com:1091/gemsbd?autoReconnect=true"
             //url = "jdbc:mysql://132.254.39.213/gemsbd?autoReconnect=true"
             //url = "jdbc:mysql://localhost/gemsbd?autoReconnect=true"
+            url = "jdbc:mysql://10.49.130.37/gemsbd?autoReconnect=true"
             username = "userScada"
             password = "ScadaGems1"
         }

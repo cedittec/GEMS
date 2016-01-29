@@ -65,21 +65,38 @@ class EstadoFinancieroController {
                 fechaMesAtras = new Date(fechaMesAtras.getYear(), fechaMesAtras.getMonth(), 1)
                 
             }
+            //De una vez se calcula el arregloEnergiaAprovechadaCog, y se pasa como parámetro
+            def arregloEnergiaAprovechadaCog =  energiaAprovechadaCogeneracion(sitios.get(0),fechaHoy, fechaMesAtras)  
             
+            //Variables utilizadas en ahorrosGlobales y costoGlobales...
+            def elAuxiliarDC045 = auxiliarDC045(sitios.get(0), fechaHoy, fechaMesAtras)
+            def elAuxiliarDC022 = auxiliarDC022(sitios.get(0), fechaHoy, fechaMesAtras)
+            def elAuxiliarDC026 = auxiliarDC026(sitios.get(0), fechaHoy, fechaMesAtras)
+            def elAuxiliarDC027 = (elAuxiliarDC022[0]+elAuxiliarDC022[1]+elAuxiliarDC022[2] + 
+                elAuxiliarDC026[0] + elAuxiliarDC026[1] + elAuxiliarDC026[2])
+            def elAuxiliarDC044 = auxiliarDC044(sitios.get(0), fechaHoy, fechaMesAtras)
+            def elAuxiliarDT063 = auxiliarDT063(sitios.get(0), fechaHoy, fechaMesAtras)
+
          
-            costosG += costosGlobales(sitios.get(0),fechaHoy, fechaMesAtras)
+            //costosG += costosGlobales(sitios.get(0),fechaHoy, fechaMesAtras)
+
+            costosG += costosGlobales2(sitios.get(0),fechaHoy, fechaMesAtras, arregloEnergiaAprovechadaCog,
+                elAuxiliarDC045, elAuxiliarDC022, elAuxiliarDC026, elAuxiliarDC027, elAuxiliarDC044, elAuxiliarDT063)
           
-            ahorrosG += ahorrosGlobales(sitios.get(0),fechaHoy, fechaMesAtras)
+            //ahorrosG += ahorrosGlobales(sitios.get(0),fechaHoy, fechaMesAtras)
+
+            ahorrosG += ahorrosGlobales2(sitios.get(0),fechaHoy, fechaMesAtras, arregloEnergiaAprovechadaCog,
+                elAuxiliarDC045, elAuxiliarDC022, elAuxiliarDC026, elAuxiliarDC027, elAuxiliarDC044, elAuxiliarDT063)
           
             flujoEfectivo += flujoEfectivoAcumulado(sitios.get(0),fechaHoy, fechaMesAtras)
          
             
             if(costosG <0)
-            costosG = 0
+                costosG = 0
             if(ahorrosG<0)
-            ahorrosG=0
+                ahorrosG=0
             if(flujoEfectivo<0)
-            flujoEfectivo = 0.0
+                flujoEfectivo = 0.0
       
             def arregloResultadoGrafica = grafica(sitios.get(0))
  
@@ -1308,6 +1325,44 @@ class EstadoFinancieroController {
         return (DC027 + DC048 + DC061)
         
     }
+
+    //Versión qué ya contiene calculada energiaAprovechadaCogeneracion, y el elAuxiliarDC045
+    def costosGlobales2(sitio, fechaActual, fechaMesAtras, laEnergiaAprovechadaCogeneracion, 
+        elAuxiliarDC045, elAuxiliarDC022, elAuxiliarDC026, elAuxiliarDC027, elAuxiliarDC044, elAuxiliarDT063)
+    {
+        //def DC022 = auxiliarDC022(sitio, fechaActual, fechaMesAtras)
+        def DC022 = elAuxiliarDC022
+
+        //def DC026 = auxiliarDC026(sitio, fechaActual, fechaMesAtras)
+        def DC026 = elAuxiliarDC026
+       
+        //def DC027 = (DC022[0]+DC022[1]+DC022[2] + DC026[0] + DC026[1] + DC026[2])
+        def DC027 = elAuxiliarDC027
+       
+        
+        def arregloEnergiaAprovechadaCog =  laEnergiaAprovechadaCogeneracion 
+       
+        //DC048 = DT062 + DC044 + DT063 + DC045 + ( DC045 - DC49.1 )
+        def DT062 = arregloEnergiaAprovechadaCog[0]+ arregloEnergiaAprovechadaCog[1] + arregloEnergiaAprovechadaCog[2]
+    
+        //def DC044 = auxiliarDC044(sitio, fechaActual, fechaMesAtras)
+        def DC044 = elAuxiliarDC044
+        
+        //def DT063 =auxiliarDT063(sitio, fechaActual, fechaMesAtras)
+        def DT063 = elAuxiliarDT063
+
+        //def DC045 = auxiliarDC045(sitio, fechaActual, fechaMesAtras)
+        def DC045 = elAuxiliarDC045
+
+        def DC491 = 0 //??      
+        def DC048 = DT062 + DC044 + DT063 + DC045 +(DC045 - DC491)
+       
+        //DC061 = DC047 + DC048 = DT063* DC045 + (DC046 + DC047+DC049.2)
+        def DC061 = (DC045 * DT063) + DC048 
+        
+        return (DC027 + DC048 + DC061)
+        
+    }
     
     //Dado una tupla viniente de siste de cog. se devuelve el costo q genero el consumo de energia de CFE de dicha tupla (registro)
     //esto si el sitio se encuentra bajo tarifa OM y region Baja Calif.
@@ -1870,6 +1925,38 @@ class EstadoFinancieroController {
       
     }
     
+    def ahorrosGlobales2(sitio, fechaActual,fechaMesAtras,laEnergiaAprovechadaCogeneracion, elAuxiliarDC045, elAuxiliarDC022, elAuxiliarDC026, elAuxiliarDC027, elAuxiliarDC044, elAuxiliarDT063){
+        //Versión qué ya tiene calculada la energiaAprovechadaCogeneracion
+        def DC018 = ausxiliarDC018(sitio, fechaActual, fechaMesAtras)
+        
+        //def DC022 = auxiliarDC022(sitio, fechaActual, fechaMesAtras)
+        def DC022 = elAuxiliarDC022
+
+        //def DC026 = auxiliarDC026(sitio, fechaActual, fechaMesAtras)
+        def DC026 = elAuxiliarDC026
+       
+        //def DC027 = (DC022[0]+DC022[1]+DC022[2] + DC026[0] + DC026[1] + DC026[2])
+        def DC027 = elAuxiliarDC027
+        
+        def arregloEnergiaAprovechadaCog =  laEnergiaAprovechadaCogeneracion
+        //DC048 = DT062 + DC044 + DT063 + DC045 + ( DC045 - DC49.1 )
+        def DT062 = arregloEnergiaAprovechadaCog[0]+ arregloEnergiaAprovechadaCog[1] + arregloEnergiaAprovechadaCog[2]
+        //def DC044 = auxiliarDC044(sitio, fechaActual, fechaMesAtras)
+        def DC044 = elAuxiliarDC044
+
+        //def DT063 =auxiliarDT063(sitio, fechaActual, fechaMesAtras)
+
+        def DT063 = elAuxiliarDT063
+        
+
+        //def DC045 = auxiliarDC045(sitio, fechaActual, fechaMesAtras)
+        def DC045 = elAuxiliarDC045
+        
+        def DC491 = 0 //??
+        def DC048 = DT062 + DC044 + DT063 + DC045 +(DC045 - DC491)
+       
+        return (DC018+DC027+DC048)
+    }
     //*************Comienzan metodos para Flujo Efectivo acumulado ************************************************
     
     def auxiliarDR041(sitio, fechaActual, fechaMesAtras)
